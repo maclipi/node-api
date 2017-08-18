@@ -62,3 +62,6 @@ app.listen(3000,()=>{
 // },e=>{
 //     console.log("Error",e);
 // })
+
+
+module.exports = {app};
