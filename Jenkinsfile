@@ -1,18 +1,15 @@
 pipeline {
-  agent {
-    node {
-      label 'node'
+    agent {
+        docker {
+            image 'node:8' 
+            args '-p 3000:3000' 
+        }
     }
-
-  }
-  stages {
-    stage('Stage') {
-      steps {
-        echo 'In Progress'
-      }
+    stages {
+        stage('Build') { 
+            steps {
+                sh 'npm install' 
+            }
+        }
     }
-  }
-  environment {
-    ENV = 'prod'
-  }
 }
